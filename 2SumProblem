@@ -1,0 +1,20 @@
+# One We have Brute force method  and Believe me it always giving me goosbumps how I can't think of an Optimal approach
+class Solution:
+    def twoSum(self, nums: List[int], target: int) -> List[int]:
+        n = len(nums)
+        for i in range(n-1):
+            for j in range(i+1,n):
+                if nums[i] + nums[j] == target:
+                    return  [i,j]
+        return  []
+
+# But then I found optimal approach, Stucked but peeked into solution  so that I can learn new approach and am open to take Knowledge as I have mention
+class Solution:
+    def twoSum(self, nums: List[int], target: int) -> List[int]:
+        seen = {}
+        for i, num in enumerate(nums):
+            complement = target - num
+            if complement in seen:
+                return [seen[complement], i]
+            seen[num] = i
+        return  []
